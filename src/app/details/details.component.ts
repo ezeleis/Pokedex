@@ -8,13 +8,11 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent {
-
-  
+  @Input() pokemon: any;
 	constructor(private modalService: NgbModal) {}
 
-	openModal(content: any) {
-    this.modalService.open(content, { backdropClass: 'light-blue-backdrop' });
-   
+  openModal(pokemon: any) {
+    this.pokemon = pokemon;
+    this.modalService.open('content', { backdropClass: 'light-blue-backdrop' });
   }
-  
 }

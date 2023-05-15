@@ -1,6 +1,6 @@
 
   <div class="row">
-      <div class="col-md-4" *ngFor="let pokemon of pokemonList$ | async">
+      <div class="col-md-4" *ngFor="let pokemon of pokemonList$ | async" (click)="openModal(pokemon)">
           <div class="card mb-4 shadow-sm">
             <img [src]="pokemon.sprites.other?.['official-artwork'].front_default || pokemon.sprites.front_default" class="card-img-top" alt="{{ pokemon.name }}">
             <div class="card-body">
@@ -9,5 +9,5 @@
           </div>
       </div>
     </div>
-  <app-details></app-details>
+  <app-details #childModal></app-details>
     
