@@ -1,1 +1,13 @@
-<p>list works!</p>
+
+  <div class="row">
+      <div class="col-md-4" *ngFor="let pokemon of pokemonList$ | async">
+          <div class="card mb-4 shadow-sm">
+            <img [src]="pokemon.sprites.other?.['official-artwork'].front_default || pokemon.sprites.front_default" class="card-img-top" alt="{{ pokemon.name }}">
+            <div class="card-body">
+              <h5 class="card-title">{{ pokemon.name }}</h5>
+            </div>
+          </div>
+      </div>
+    </div>
+  <app-details></app-details>
+    

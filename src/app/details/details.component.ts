@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-details',
@@ -7,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class DetailsComponent {
 
+  
+	constructor(private modalService: NgbModal) {}
+
+	openModal(content: any) {
+    this.modalService.open(content, { backdropClass: 'light-blue-backdrop' });
+   
+  }
+  
 }
