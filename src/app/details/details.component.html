@@ -1,14 +1,21 @@
-<p>details works!</p>
-
 <ng-template #content let-modal>
 	<div class="modal-header">
-		<h4 class="modal-title">Modal title</h4>
-		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	  <h4 class="modal-title">{{ pokemonData?.name }}</h4>
+	  <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
 	</div>
 	<div class="modal-body">
-		<p>One fine body&hellip;</p>
+	  <div *ngIf="pokemonData">
+		<img [src]="pokemonData.sprites.front_default" class="pokemon-image" alt="{{ pokemonData.name }}" />
+		<p>Height: {{ pokemonData.height }}</p>
+		<p>Weight: {{ pokemonData.weight }}</p>
+		<p>Abilities:</p>
+		<ul>
+		  <li *ngFor="let ability of pokemonData.abilities">{{ ability.ability.name }}</li>
+		</ul>
+	  </div>
 	</div>
 	<div class="modal-footer">
-		<button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+	  <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
 	</div>
-</ng-template>
+  </ng-template>
+  

@@ -1,0 +1,28 @@
+.pokemon-details {
+    display: flex;
+    align-items: center;
+  }
+  
+  .pokemon-image-container {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    margin-right: 1rem;
+    background-color: #343a40;
+  }
+  
+  .pokemon-image {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  .pokemon-info {
+    flex: 1;
+    color: #fff;
+  }
+  
+  /* Rest of the existing CSS styles for the modal */
+  

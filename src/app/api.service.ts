@@ -29,7 +29,7 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getFirstTwentyPokemon(): Observable<PokemonResponse[]> {
-    return this.http.get<PokemonListResponse>(`${this.apiUrl}/pokemon?limit=20`)
+    return this.http.get<PokemonListResponse>(`${this.apiUrl}/pokemon?limit=2000`)
       .pipe(
         map(response => response.results),
         map(pokemonList => pokemonList.map(pokemon => this.http.get<PokemonResponse>(pokemon.url))),
